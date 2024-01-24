@@ -1,0 +1,134 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+}
+
+.layout-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.layout-sidenav {
+  width: 320px;
+  transition: width 300ms linear;
+  z-index: 1000;
+  position: relative;
+  background: #f6f6d6;
+}
+
+.layout-content {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.nav-item {
+  font: font(body-2);
+  height: 50px;
+  padding: 0 36px;
+  //width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 300ms linear, padding 300ms linear;
+  white-space: nowrap;
+
+  img {
+    width: 24px;
+  }
+
+  &.is-minified {
+    padding: 0 24px;
+  }
+
+  .icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: "";
+      border-radius: 50%;
+      background-color: #4aa09b;
+      position: absolute;
+      top: auto;
+      left: auto;
+      width: 40px;
+      height: 40px;
+      z-index: 0;
+      transform: translateX(-1px);
+    }
+
+    img {
+      width: 24px;
+      z-index: 1;
+    }
+  }
+
+  .text {
+    flex: 1 0;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+
+    img {
+      transform: rotate(0);
+      transition: transform 200ms linear;
+    }
+  }
+
+  &.opened {
+    .toggle img {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.active {
+    font: font(body-1);
+    background-color: #f7f7f7;
+  }
+
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+
+  img {
+    transform: rotate(180);
+    transition: transform 200ms linear;
+  }
+}
+
+.nav-item-children {
+  padding: 0 12px 0 27px;
+  background: #f7f7f7;
+}
+
+.nav-item-child {
+  font: font(body-2);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: rgba(#000, 0.6);
+  transition: color 200ms linear;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(#000, 1);
+  }
+}
+.text {
+  flex: 1 0;
+}

@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0;
+  width: 100%;
+  flex: 1 0;
+}
+
+.searchForm {
+  label {
+    padding-right: 10px;
+  }
+  margin: 10px 0 30px 0;
+  width: 300px;
+}
+
+.book-container {
+  height: 200px;
+  width: 300px;
+  box-shadow: 0px 0.6px 20px (#e6e6e6);
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  .mat-mdc-card-title,
+  .mat-mdc-card-footer,
+  .mat-mdc-card-subtitle {
+    display: flex;
+  }
+
+  .mat-mdc-card-actions {
+    gap: 30px;
+    button {
+      display: flex;
+      background-color: color(accent, 100);
+    }
+  }
+}

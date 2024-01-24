@@ -1,0 +1,21 @@
+<div class="landing-page">
+  <form class="searchForm">
+    <label for="bookTitle">Book</label>
+    <input
+      id="bookTitle"
+      type="search"
+      placeholder="search"
+      [formControl]="bookTitle"
+    />
+  </form>
+
+  <div *ngFor="let book of allBooksData; let i = index">
+    <mat-card class="book-container" *ngIf="i < 3">
+      <mat-card-title>{{ book.bookTitle }}</mat-card-title>
+      <mat-card-title>{{ book.bookAuthor }}</mat-card-title>
+      <mat-card-subtitle>{{
+        book.publishDate | date : "EEE, dd MMM yyyy"
+      }}</mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="layout-container">
+  <div class="layout-sidenav">
+    <ng-container *ngFor="let navItem of layoutConfig$ | async as layoutConfig">
+      <div
+        class="nav-item"
+        [class.opened]="navItem.open"
+        [routerLink]="navItem.link"
+        routerLinkActive="active"
+      >
+        <img [src]="navItem.icon" />
+        {{ navItem.title }}
+
+        <div
+          class="toggle"
+          (click)="navItem.open = !navItem.open; $event.stopPropagation()"
+          *ngIf="navItem.children.length"
+        >
+          <img src="/assets/icons/arrow-down.png" alt="" />
+        </div>
+      </div>
+
+      <div class="nav-item-children" *ngIf="navItem.open">
+        <div
+          class="nav-item-child"
+          *ngFor="let navItemChild of navItem.children"
+          [routerLink]="[navItemChild.link]"
+          routerLinkActive="active"
+        >
+          {{ navItemChild.title }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="layout-content">
+    <main class="main" [class.full-width]="true">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
