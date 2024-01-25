@@ -16,10 +16,6 @@ const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'landing-page/books',
-  //   loadComponent: () => import('./books/books.component'),
-  // },
 ];
 
 export default routes;

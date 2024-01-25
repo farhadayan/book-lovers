@@ -3,7 +3,7 @@ import { BookModel } from './state/book.model';
 export const allBooks: BookModel[] = [
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir cholse jibon',
+    bookTitle: 'Chess',
     publishDate: new Date('10 / 21 / 2023'),
     bookImage: './assets/images/cover-image-1.jpg',
     bookId: 1,
@@ -18,7 +18,7 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'Football',
     publishDate: new Date('1 / 3 / 1976'),
 
     bookImage: './assets/images/cover-image-3.jpg',
@@ -26,7 +26,7 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'Cricket',
     publishDate: new Date('1 / 1 / 1976'),
 
     bookImage: './assets/images/cover-image-4.jpg',
@@ -34,7 +34,7 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'Sports World',
     publishDate: new Date('1 / 31 / 1978'),
 
     bookImage: './assets/images/cover-image-5.jpg',
@@ -42,7 +42,7 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'World',
     publishDate: new Date('1 / 11 / 1976'),
 
     bookImage: './assets/images/cover-image-6.jpg',
@@ -50,7 +50,7 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'Country',
     publishDate: new Date('11 / 1 / 1976'),
 
     bookImage: './assets/images/cover-image-7.jpg',
@@ -58,7 +58,7 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'City',
     publishDate: new Date('1 / 1 / 1976'),
 
     bookImage: './assets/images/cover-image-8.jpg',
@@ -66,10 +66,26 @@ export const allBooks: BookModel[] = [
   },
   {
     bookAuthor: 'Farhad Ahmed',
-    bookTitle: 'Akkas Alir kolponar jogot',
+    bookTitle: 'Dream',
     publishDate: new Date('1 / 1 / 1976'),
 
     bookImage: './assets/images/cover-image-1.jpg',
     bookId: 9,
+  },
+  {
+    bookAuthor: 'Farhad Ahmed',
+    bookTitle: 'City 1',
+    publishDate: new Date('1 / 1 / 1976'),
+
+    bookImage: './assets/images/cover-image-8.jpg',
+    bookId: 10,
+  },
+  {
+    bookAuthor: 'Farhad Ahmed',
+    bookTitle: 'City 2',
+    publishDate: new Date('1 / 1 / 1976'),
+
+    bookImage: './assets/images/cover-image-8.jpg',
+    bookId: 11,
   },
 ];

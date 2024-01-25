@@ -1,5 +1,5 @@
 import { Component, Injectable } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { BookModel } from './state/book.model';
 import { BookState } from './state/book.state';
 import { CommonModule, NgFor } from '@angular/common';
@@ -32,7 +32,7 @@ export default class LandingPageComponent {
 
   constructor(
     private bookState: BookState,
-
+    private route: ActivatedRoute,
     private router: Router
   ) {}
   ngOnInit() {
@@ -49,15 +49,19 @@ export default class LandingPageComponent {
   }
 
   private bookTitleChange = this.bookTitle.valueChanges.subscribe(
-    (bookSearch) => {
-      if (bookSearch?.length) {
+    (searchValues) => {
+      if (searchValues?.length) {
         this.foundBooks = this.bookState
           .allBooksInfo()
           .filter((x) =>
-            x.bookTitle.toLocaleLowerCase().includes(bookSearch.toLowerCase())
+            x.bookTitle.toLocaleLowerCase().includes(searchValues.toLowerCase())
           );
         this.allBooksData = [...this.foundBooks];
+        this.router.navigate([this.route.queryParams], {
+          queryParams: { searchValues },
+        });
       } else {
+        this.router.navigate(['/landing-page']);
         this.latestBooks();
       }
     }

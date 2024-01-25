@@ -8,7 +8,6 @@ import { BookModel } from './book.model';
 export class BookState {
   constructor(private bookService: BookService) {}
   allBooks = signal(this.bookService.getBooksData());
-  //allBookList: BookModel[] = [];
 
   allBooksInfo() {
     return this.allBooks().map((x) => x);

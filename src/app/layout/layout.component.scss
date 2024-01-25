@@ -29,7 +29,7 @@
   font: font(body-2);
   height: 50px;
   padding: 0 36px;
-  //width: 100%;
+
   display: flex;
   align-items: center;
   gap: 24px;
@@ -112,13 +112,13 @@
 }
 
 .nav-item-children {
-  padding: 0 12px 0 27px;
+  padding: 0 12px 0 124px;
   background: #f7f7f7;
 }
 
 .nav-item-child {
   font: font(body-2);
-  height: 50px;
+  height: 36px;
   display: flex;
   align-items: center;
   color: rgba(#000, 0.6);

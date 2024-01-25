@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.book-container {
+  height: 200px;
+  width: 300px;
+
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  .mat-mdc-card-title,
+  .mat-mdc-card-footer,
+  .mat-mdc-card-subtitle {
+    display: flex;
+  }
+
+  .mat-mdc-card-actions {
+    gap: 30px;
+    button {
+      display: flex;
+      background-color: color(accent, 100);
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

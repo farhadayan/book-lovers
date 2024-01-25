@@ -1,1 +1,17 @@
-<p>books-details works!</p>
+<div class="book-details">
+  <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" (click)="closeDialog()">close</mat-icon>
+  </button>
+  <mat-card-header>Book Details</mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-title>{{ dialogData.bookData.bookTitle }}</mat-card-title
+  ><br />
+  <mat-card-subtitle>{{ dialogData.bookData.bookAuthor }}</mat-card-subtitle
+  ><br />
+  <mat-card-subtitle>{{
+    dialogData.bookData.publishDate | date : "EEE, dd MMM yyyy"
+  }}</mat-card-subtitle>
+  <div class="close">
+    <button mat-raised-button (click)="closeDialog()">Close</button>
+  </div>
+</div>
