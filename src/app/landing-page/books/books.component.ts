@@ -32,18 +32,16 @@ import { MatOptionModule } from '@angular/material/core';
 export class BooksComponent {
   pageLimitOptions: Array<number> = [10, 20];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  lowValue: number = 0;
-  highValue: number = 10;
+
   constructor(
     private bookState: BookState,
-    private router: Router,
+
     private _dialog: MatDialog
   ) {}
 
   booksList = new MatTableDataSource<BookModel>(this.bookState.allBooksInfo());
   displayColumns = ['bookAuthor', 'bookTitle'];
   openDetails(book: BookModel) {
-    console.log('row', book);
     let dialogRef = this._dialog.open(BooksDetailsComponent, {
       height: '300px',
       width: '400px',
@@ -54,13 +52,9 @@ export class BooksComponent {
       },
     });
   }
-  public changeEvent(event: PageEvent): PageEvent {
-    this.lowValue = event.pageIndex * event.pageSize;
-    this.highValue = this.lowValue + event.pageSize;
-    return event;
-  }
 
   ngAfterViewInit() {
+    console.log('paginator: ', this.paginator);
     this.booksList.paginator = this.paginator;
   }
 }

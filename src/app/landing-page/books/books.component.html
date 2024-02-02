@@ -21,10 +21,6 @@
     ></tr>
   </mat-table>
 
-  <mat-paginator
-    #paginator
-    [pageSizeOptions]="pageLimitOptions"
-    (page)="changeEvent($event)"
-  >
+  <mat-paginator #paginator [pageSizeOptions]="pageLimitOptions">
   </mat-paginator>
 </div>

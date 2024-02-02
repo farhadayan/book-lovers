@@ -7,7 +7,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'landing-page',
-        loadChildren: () => import('./landing-page/landing-page.routes'),
+        loadComponent: () => import('./landing-page/landing-page.component'),
       },
       {
         path: 'landing-page/books',
