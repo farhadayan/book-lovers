@@ -57,8 +57,9 @@ export default class LandingPageComponent {
             x.bookTitle.toLocaleLowerCase().includes(searchValues.toLowerCase())
           );
         this.allBooksData = [...this.foundBooks];
-        this.router.navigate([this.route.queryParams], {
-          queryParams: { searchValues },
+
+        this.router.navigate([], {
+          queryParams: { search: searchValues },
         });
       } else {
         this.router.navigate(['/landing-page']);

@@ -42,55 +42,6 @@
     width: 24px;
   }
 
-  &.is-minified {
-    padding: 0 24px;
-  }
-
-  .icon-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:before {
-      content: "";
-      border-radius: 50%;
-      background-color: #4aa09b;
-      position: absolute;
-      top: auto;
-      left: auto;
-      width: 40px;
-      height: 40px;
-      z-index: 0;
-      transform: translateX(-1px);
-    }
-
-    img {
-      width: 24px;
-      z-index: 1;
-    }
-  }
-
-  .text {
-    flex: 1 0;
-  }
-
-  .toggle {
-    display: flex;
-    align-items: center;
-
-    img {
-      transform: rotate(0);
-      transition: transform 200ms linear;
-    }
-  }
-
-  &.opened {
-    .toggle img {
-      transform: rotate(180deg);
-    }
-  }
-
   &.active {
     font: font(body-1);
     background-color: #f7f7f7;
@@ -98,16 +49,6 @@
 
   &:hover {
     background-color: #f7f7f7;
-  }
-}
-
-.toggle {
-  display: flex;
-  align-items: center;
-
-  img {
-    transform: rotate(180);
-    transition: transform 200ms linear;
   }
 }
 

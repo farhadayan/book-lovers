@@ -1,5 +1,5 @@
 <div class="table-container mat-elevation-z8">
-  <mat-table #table [dataSource]="booksList">
+  <mat-table #table [dataSource]="booksList" matSort multiTemplateDataRows>
     <ng-container matColumnDef="bookAuthor">
       <th mat-header-cell *matHeaderCellDef>Author</th>
       <td mat-cell *matCellDef="let element">
@@ -7,7 +7,7 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="bookTitle">
-      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
       <td mat-cell *matCellDef="let element">
         {{ element.bookTitle }}
       </td>

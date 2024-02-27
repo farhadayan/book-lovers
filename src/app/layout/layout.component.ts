@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LAYOUT_CONFIG, LayoutConfig } from './layout.config';
 import { BehaviorSubject } from 'rxjs';
-import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-layout',

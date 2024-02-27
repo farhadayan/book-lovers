@@ -5,15 +5,12 @@ import { BookModel } from '../state/book.model';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { BooksDetailsComponent } from '../books-details/books-details.component';
-import {
-  MatPaginator,
-  MatPaginatorModule,
-  PageEvent,
-} from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 
 @Component({
   selector: 'app-books',
@@ -25,19 +22,16 @@ import { MatOptionModule } from '@angular/material/core';
     CommonModule,
     MatPaginatorModule,
     MatTableModule,
+    MatSortModule,
   ],
   templateUrl: './books.component.html',
   styleUrl: './books.component.scss',
 })
 export class BooksComponent {
-  pageLimitOptions: Array<number> = [10, 20];
+  pageLimitOptions: Array<number> = [5, 10, 20];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  constructor(
-    private bookState: BookState,
-
-    private _dialog: MatDialog
-  ) {}
+  @ViewChild(MatSort) sort: MatSort = new MatSort();
+  constructor(private bookState: BookState, private _dialog: MatDialog) {}
 
   booksList = new MatTableDataSource<BookModel>(this.bookState.allBooksInfo());
   displayColumns = ['bookAuthor', 'bookTitle'];
@@ -54,7 +48,7 @@ export class BooksComponent {
   }
 
   ngAfterViewInit() {
-    console.log('paginator: ', this.paginator);
+    this.booksList.sort = this.sort;
     this.booksList.paginator = this.paginator;
   }
 }
